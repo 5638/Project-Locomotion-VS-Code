@@ -1,0 +1,7 @@
+{
+  "timeStep": 0.01,
+  "maxVelocity": 8.79,
+  "maxAcceleration": 22.625,
+  "maxJerk": 20.0,
+  "wheelBase": 21.75
+}
