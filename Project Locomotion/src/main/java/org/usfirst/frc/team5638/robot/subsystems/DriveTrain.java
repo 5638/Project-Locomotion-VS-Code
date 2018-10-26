@@ -40,7 +40,7 @@ public class DriveTrain extends Subsystem implements PIDOutput {
     setDefaultCommand(new DriveCom());
   }
 
-  public void drive() {
+  public void drive(XboxController x0) {
     double steer = x0.getRawAxis(0);
     double a = x0.getRawAxis(3);
     double b = x0.getRawAxis(2);
