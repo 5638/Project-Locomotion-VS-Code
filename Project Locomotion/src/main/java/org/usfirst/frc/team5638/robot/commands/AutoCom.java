@@ -7,12 +7,15 @@
 
 package org.usfirst.frc.team5638.robot.commands;
 
+import org.usfirst.frc.team5638.robot.Robot;
+import org.usfirst.frc.team5638.robot.RobotMap;
+import org.usfirst.frc.team5638.robot.AutoModes.LeftSwitch;
+
 import edu.wpi.first.wpilibj.command.Command;
 
 public class AutoCom extends Command {
   public AutoCom() {
     // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
   }
 
   // Called just before this Command runs the first time
@@ -23,22 +26,26 @@ public class AutoCom extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    RobotMap.l1.set(LeftSwitch.l_);
+    RobotMap.r1.set(LeftSwitch.r_);
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return false;
+    return LeftSwitch.ldone && LeftSwitch.rdone;
   }
 
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    Robot.DriveTrain.stop();
   }
 
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
+    end();
   }
 }

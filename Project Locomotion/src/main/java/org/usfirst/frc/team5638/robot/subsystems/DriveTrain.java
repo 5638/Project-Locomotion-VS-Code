@@ -17,6 +17,7 @@ import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import jaci.pathfinder.Waypoint;
 
 public class DriveTrain extends Subsystem implements PIDOutput {
@@ -48,6 +49,10 @@ public class DriveTrain extends Subsystem implements PIDOutput {
     double throttle = a - b;
 
     driveTrain.arcadeDrive(throttle, steer);
+    
+    //gets left and right side velocity
+    SmartDashboard.putNumber("Left Motor", l1.getSelectedSensorVelocity(0));  
+    SmartDashboard.putNumber("Right Motor", r1.getSelectedSensorVelocity(0));
   }
 
   public void stop() {

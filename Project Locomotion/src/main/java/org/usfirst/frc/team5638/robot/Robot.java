@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import com.kauailabs.navx.frc.AHRS;
 
+import org.usfirst.frc.team5638.robot.AutoModes.LeftSwitch;
 import org.usfirst.frc.team5638.robot.commands.AutoCom;
 import org.usfirst.frc.team5638.robot.subsystems.DriveTrain;
 
@@ -18,6 +19,7 @@ public class Robot extends TimedRobot {
 	
 	
 	public static DriveTrain DriveTrain = new DriveTrain();
+	public static LeftSwitch leftSwitch = new LeftSwitch();
 	public static OI OI;
 
 	Command DriveCom;
